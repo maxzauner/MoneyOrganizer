@@ -1,0 +1,374 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
+
+
+
+/* start */
+
+/* Erste Seite */
+
+.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper { text-shadow:0 0 0 !important; }
+
+
+
+#title {
+    font-size: 24px;
+    font-weight: normal;
+    margin-top: 20vh;
+    overflow: visible;
+    padding: 0px;
+    text-align: center;
+    font-family: "Segoe UI";
+    color: white;
+}
+
+
+
+.button {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto !important;
+}
+
+.button .overview {
+    margin-top: 20vh !important;
+}
+
+#p1 a {
+    text-decoration: none;
+    color: #3EB5D7;
+}
+
+
+#selection {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+
+#selection .ui-input-text, #selection .ui-input-search {
+    position: relative;
+    width: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 15%;
+}
+
+
+
+.ui-header .ui-title {
+    color: black;
+    font-family: "Segoe UI";
+}
+
+
+
+/* header color */
+.ui-page .ui-header {
+    background: white !important;
+}
+
+
+
+
+/* Burger menue */
+#header img {
+    width: 20px;
+    position: absolute;
+    margin: 10px;
+}
+
+
+
+/* Backgroundcolor of the app */
+#p1, #p2, #p3 {
+    background-color: #3EB5D7;
+}
+
+.ui-mobile, .ui-mobile body {
+    background-color: #3EB5D7;
+}
+
+
+
+
+.dashboard h3 {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+}
+
+/* expense list style  */
+
+
+#list {
+    /*position: relative;*/
+    margin-top: 15vh;
+}
+
+
+.expenseList {
+    display: table;
+    width:100%;
+    color: white;
+
+}
+
+
+#expenseDate {
+    display:table-cell;
+    width:25%;
+    padding-left: 5vw;
+
+
+}
+
+#expensePrice {
+    display:table-cell;
+    text-align:center;
+    width:50%;
+
+}
+
+
+#expenseItem {
+    display:table-cell;
+    text-align:right;
+    width:25%;
+    padding-right: 5vw;
+
+}
+
+
+
+
+
+
+
+
+.budget {
+    position: relative;
+    height: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    text-align: center;
+    margin-top: 10vh;
+    padding-top: 1vh;
+    border-radius: 15px 15px 0 0;
+    width: 30%;
+
+    background: #FFFFFF;
+    color: black;
+}
+
+
+
+/* Style for income and expense Dashboard */
+.income, .expense {
+    position: relative;
+    left: 35%;
+    float: left;
+    width: 15%;
+    height: 70px;
+    color: black;
+}
+
+.income p, .expense p {
+    margin-left: 7%;
+    line-height: 9px;
+}
+
+
+
+/* Different color for income and expense */
+.income {
+    background: #39EDE4;
+    border-radius: 0 0 0 15px;
+}
+
+.expense {
+    background: #DBA0A0;
+    border-radius: 0 0 15px 0;
+}
+
+
+#popup, #popupIncome {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.plus {
+    font-size: x-large;
+    position: relative;
+    width: 4vw;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    margin-top: 10vh;
+    color: white;
+
+}
+
+.plus h4 {
+    text-align: center;
+}
+
+.plus a {
+    text-align: center;
+}
+
+
+/* Dialog Style */
+
+
+.dialogTitle {
+    text-align: center;
+}
+
+.ui-content .dialog input {
+    float: left;
+}
+
+
+
+/* Test database */
+
+
+#todoh3 {
+    background-color:red;
+    color: white;
+}
+
+table.todos  {
+    border-spacing : 5px;
+    padding :5px;
+    width :100%;
+}
+table.todos tr th  {
+    background-color:blue; color:white;
+}
+table.todos tr td,th {
+    text-align: center;
+}
+#divUpdate { visibility : hidden }
+
+
+.expense-item {
+    height: 2rem;
+}
+
+
+
+
+
+
+@media(max-device-width: 480px){
+
+
+    .button {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: auto !important;
+    }
+
+    .button .overview {
+        margin-top: 20vh !important;
+    }
+
+
+
+    #selection .ui-input-text, #selection .ui-input-search {
+        position: relative;
+        width: 80%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+
+    /* Dashboard */
+
+
+    .budget {
+        position: relative;
+        width: 80%;
+        height: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        margin-top: 10vh;
+        padding-top: 1vh;
+        border-radius: 15px 15px 0 0;
+        background: #FFFFFF;
+        color: black;
+    }
+
+    .income, .expense {
+        position: relative;
+        left: 10%;
+        float: left;
+        width: 40%;
+        height: 70px;
+        font-size: 1em;
+        color: black;
+    }
+
+    .income p, .expense p {
+        margin-left: 20%;
+    }
+
+
+    .plus {
+        font-size: x-large;
+        position: relative;
+        width: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        margin-top: 10vh;
+        color: white;
+
+    }
+
+    .plus button {
+        text-decoration: none !important;
+        color: #3EB5D7 !important;
+    }
+
+    .plus h4 {
+        transform: translateX(-50%);
+        font-size: 0.8em;
+    }
+
+
+    .expenseList {
+        font-size: 1em;
+        margin-top: 2.3vh;
+    }
+
+
+}
+
