@@ -3,6 +3,9 @@
  *
  */
 
+
+
+
 class UI {
 
     constructor() {
@@ -25,10 +28,6 @@ class UI {
         //this.db = new db();
 
     }
-
-
-
-
 
 
     submitBudgetForm(){
@@ -207,82 +206,6 @@ class DashboardValues {
     }
 
      */
-
-}
-class ExpenseHandler {
-
-
-    get getExpenseItem() {
-        return $("#expenseItemInput").val();
-    }
-
-    get getExpensePrice() {
-        var price = $("#expensePriceInput").val();
-        return parseFloat(price);
-    }
-
-    get getExpenseDate() {
-        return $("#expenseDateInput").val();
-    }
-
-
-    setExpenseList() {
-
-
-        var expenseItem = this.getExpenseItem;
-        $("#expenseItem").text(expenseItem);
-
-        var expensePrice = "-" + this.getExpensePrice + "€";
-        $("#expensePrice").text(expensePrice);
-
-        var expenseDate = this.getExpenseDate;
-        $("#expenseDate").text(expenseDate);
-
-
-    }
-
-
-
-    calculateBudget() {
-        var startBudget = new DashboardValues();
-        var budgetInt = startBudget.getIncomeInput;
-
-        var calculateBudget = budgetInt - this.getExpensePrice;
-        var budget = "Budget: " + calculateBudget + " Euro";
-
-
-        var expense = this.getExpensePrice + " Euro";
-
-
-        $(".tr").css("display", "table-row");
-
-
-        $("#budgetValue").text(budget);
-        $("#expenseValue").text(expense);
-
-    }
-
-
-
-    /*
-    budgetneu() {
-
-
-        var totalBudget = $("#budgetValue").val();
-        var totalIncome = $("#incomeValue").val();
-        console.log("?");
-
-        $("#todosList").children($(".price")).each(function() {
-            if ($(this).val() != "") {
-                totalBudget = totalIncome - parseInt($(this).val());
-                var budget = "Budget: " + totalBudget + " Euro";
-                $("#budgetValue").text(budget);
-                console.log($(this).val());
-            }
-        });
-
-    }
-    */
 
 }
 class Transactions {
