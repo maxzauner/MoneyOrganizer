@@ -73,6 +73,13 @@
 }
 
 
+#header {
+    position: fixed;
+    width: 100%;
+    padding-bottom: 20vh;
+    z-index: 999;
+}
+
 
 .ui-header .ui-title {
     color: black;
@@ -88,16 +95,6 @@
 
 
 
-
-/* Burger menue */
-#header img {
-    width: 20px;
-    position: absolute;
-    margin: 10px;
-}
-
-
-
 /* Backgroundcolor of the app */
 #p1, #p2, #p3 {
     background-color: #3EB5D7;
@@ -107,7 +104,9 @@
     background-color: #3EB5D7;
 }
 
-
+.dashboard {
+    margin-top: 8vh;
+}
 
 
 .dashboard h3 {
@@ -117,6 +116,13 @@
     text-align: center;
     color: white;
 }
+
+
+#moneyAlert {
+    color: red;
+    text-decoration: underline;
+}
+
 
 /* expense list style  */
 
@@ -135,7 +141,7 @@
 }
 
 
-#expenseDate {
+.expenseDate {
     display:table-cell;
     width:25%;
     padding-left: 5vw;
@@ -143,7 +149,7 @@
 
 }
 
-#expensePrice {
+.expensePrice {
     display:table-cell;
     text-align:center;
     width:50%;
@@ -151,7 +157,7 @@
 }
 
 
-#expenseItem {
+.expenseItem {
     display:table-cell;
     text-align:right;
     width:25%;

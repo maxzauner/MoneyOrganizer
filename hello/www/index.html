@@ -11,12 +11,11 @@
         <link href="jquery/jquery-ui.css" rel="stylesheet" />
         <script src="jquery/jquery-1.8.0.min.js"></script>
         <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
-        <!--<script src="jquery/jquery-ui.js"></script>-->
-
 
         <script src="js/index.js"></script>
-        <script src="js/myScript.js"></script>
-        <script src="js/database.js"></script>
+        <script src="js/ExpenseHandler.js"></script>
+        <script src="js/BudgetHandler.js"></script>
+
 
 
 
@@ -33,54 +32,26 @@
             <div data-role="content">
                 <h1 id="title">MoneyOrganizer</h1>
                 <div id="selection">
-                    <input type="month" id="monthInput" placeholder="Wähle einen Monat aus"><br>
 
                     <input type="number" id="incomeInput" placeholder="Wähle dein Einkommen aus"><br>
+                    <input type="number" id="saveMoneyInput" placeholder="Wieviel Geld möchtest du sparen?"><br>
+
                 </div>
-
-
 
                 <button class="button" ><a id="buttonListener" href=""  data-transition="flip">OK</a> </button>
 
-
-                <button class="button overview"><a href="#p2">Zur Übersicht</a></button>
-
                 <script type="text/javascript">
-
 
                     let budgetButton = $("#buttonListener");
+
                     budgetButton.click(function () {
-                        const ui = new UI();
-                        ui.submitBudgetForm();
+                        const budgetHandler = new BudgetHandler();
+                        budgetHandler.submitBudgetForm();
 
                     });
 
                 </script>
 
-                <!--
-                <script type="text/javascript">
-
-
-
-                    $("#buttonListener").click(function () {
-                        if ($("#monthInput").val() == "") {
-                            alert("geb eine datum an");
-                        } else if ($("#incomeInput").val() == "") {
-                            alert("geb dein geld an");
-                        } else {
-                            location.href = "#p2";
-                        }
-
-                        var dashboardValues = new DashboardValues();
-                        dashboardValues.getMonthInput;
-                        dashboardValues.getIncomeInput;
-
-                        dashboardValues.setDashboardValues();
-                    });
-
-
-                </script>
-                -->
 
             </div>
 
@@ -93,7 +64,6 @@
 
             <div id="header">
                 <div data-role="header">
-                    <img src="jquery/images/icons-svg/bars-black.svg">
                     <h1>MoneyOrganizer</h1>
                 </div>
             </div>
@@ -101,7 +71,8 @@
 
             <div class="dashboard" data-role="content">
                 <h3>Dashboard</h3>
-                <h3 id="monthValue">November 2019</h3>
+                <h3 id="monthValue">Datum</h3>
+                <h3 id="moneyAlert"></h3>
             </div>
 
                 <div>
@@ -146,14 +117,9 @@
 
                             <label for="expensePriceInput" class="ui-hidden-accessible">Preis:</label>
                             <input type="number" name="pass" id="expensePriceInput" value="" placeholder="Preis" data-theme="a"><br>
-                                        
-
-                            <!--
-                            <label for="txtDate" class="ui-hidden-accessible">Datum:</label>
-                            <input type="date" id="txtDate" placeholder="Waehle einen Datum  aus"><br>
-                            -->
 
                             <input type="hidden" id="key" />
+                                        
 
                             <a href="#p2" id="btnAdd" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-a">OK</a><br>
 
@@ -163,13 +129,14 @@
 
 
                                 let expenseBtn = $("#btnAdd");
-                                const ui = new UI();
+
+                                const expenseHandler = new ExpenseHandler();
+                                const budgetHandler = new BudgetHandler();
                                 expenseBtn.unbind();
                                 expenseBtn.click(function () {
-                                    ui.submitExpenseList();
-
+                                    expenseHandler.submitExpenseList();
+                                    budgetHandler.checkLeftBudget();
                                 });
-
 
 
                             </script>
@@ -191,77 +158,28 @@
                             <a href="#p2" id="submitNewIncome" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-a">OK</a><br>
 
 
-
-
                         </div>
                     </form>
                 </div>
 
                 <script type="text/javascript">
+
                     let addNewIncome = $("#submitNewIncome");
+
                     addNewIncome.click(function () {
-                        const ui = new UI();
-                        ui.addNewIncome();
+                        const budgetHandler = new BudgetHandler();
+                        budgetHandler.addNewIncome();
+                        budgetHandler.checkLeftBudget();
                     });
+
                 </script>
 
             </div>
 
-
-
-            <!--
-            <script type="text/javascript">
-                $(function () {
-                    openDb();
-                    var btnAdd = $("#btnAdd");
-                    var btnUpdate = $("#btnUpdate");
-                    var btnCancel = $("#btnCancel");
-                    btnAdd.click(function () {
-                        addTodo();
-                        var expense = new ExpenseHandler();
-                        expense.getExpensePrice;
-                        /*expense.calculateBudget();*/
-                        expense.budgetneu();
-                    });
-
-                });
-            </script>
-            -->
-
-
-
         </div>
 
 
-
-
-
-
-        <!--
-            <script type="text/javascript">
-
-                $("#addExpenseButton").click(function () {
-
-                    var expense = new ExpenseHandler();
-                    expense.getExpenseItem;
-                    expense.getExpensePrice;
-                    expense.getExpenseDate;
-
-                    expense.setExpenseList();
-                    expense.calculateBudget();
-
-                    var neu = new Transactions();
-                    neu.newExpense();
-                    neu.newBudget();
-
-                });
-
-            </script>
-            -->
-
         </div>
-
-
 
 
     </body>
